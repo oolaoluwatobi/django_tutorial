@@ -1,23 +1,18 @@
 {% extends 'layout.html' %} 
 
-{% block title %} Posts {% endblock %} 
+{% block title %} {{ post.title }} {% endblock %} 
 {% block content %}
 <section>
-  <h1>Posts </h1>
-
-    {% for post in posts %}
       <article class="post">
         <h2>
-          <a href="{% url 'posts:page' slug=post.slug %}">
-            {{ post.title }}
-          </a>
+          {{ post.title }}
         </h2>
-        <p>{{ post.content }}</p>
+        <p>{{ post.body }}</p>
+        <p>{{ post. }}</p>
         <p>Created at: {{ post.created_at }}</p>
         <p>Updated at: {{ post.updated_at }}</p>
         {% comment %} <a href="{{ url_for('posts.show', post_id=post.id) }}">Show</a> {% endcomment %}
         {% comment %} <a href="{{ url_for('posts.show', post_id=post.id) }}">{{ post.title }}</a> {% endcomment %}
       </article>
-    {% endfor %}
 </section>
 {% endblock %}
