@@ -2,9 +2,10 @@ from django.db import models
 
 # Create your models here.
 
-class Post(models.Model):
-    title = models.CharField(max_length=75)
-    body = models.TextField()
+
+class User(models.Model):
+    name = models.CharField(max_length=75)
+    age = models.TextField()
     slug = models.SlugField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

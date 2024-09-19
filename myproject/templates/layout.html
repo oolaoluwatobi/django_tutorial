@@ -4,7 +4,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %} Django App {% endblock %}</title>
+    <title>
+      {% block title %} 
+        Django App 
+      {% endblock %}
+    </title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <script src="{% static 'js/main.js' %}" defer></script>
   </head>
@@ -19,6 +23,12 @@
         <span role='img' aria-label="About" >
 
           😀
+        </span>
+      </a>
+      <a href="{% url 'users:user_register' %}">
+        <span role='img' aria-label="Users" >
+
+          👨‍👩‍👧‍👧
         </span>
       </a>
       <a href="{% url 'posts:list' %}">
