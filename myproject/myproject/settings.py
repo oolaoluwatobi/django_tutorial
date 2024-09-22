@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts', # This is the line that was added
+    'users', # This is the line that was added
 ]
 
 MIDDLEWARE = [

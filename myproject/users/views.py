@@ -1,12 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
-def user_register(request):
-    return render(request, 'users/user_register.html')
-    # posts = Post.objects.all().order_by('-created_at')
-    # context = {
-    #     'posts': posts
-    # }
+def register_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('posts:list')
+    else:
+        form = UserCreationForm()
+    return render(request, 'users/register_view.html', {'form': form})
 
-    # return render(request, 'posts/posts_list.html', context)
-
+ 
